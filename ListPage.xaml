@@ -21,7 +21,7 @@
             <Button Text="Save"
                     Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1"
-                    Text="Delete"
+                    Text="Delete Item"
                     Clicked="OnDeleteButtonClicked"/>
         </Grid>
         <ListView x:Name="listView"

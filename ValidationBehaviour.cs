@@ -20,7 +20,7 @@ namespace PustanRaduLab7
         }
         void OnEntryTextChanged(object sender, TextChangedEventArgs args)
         {
-            ((Editor)sender).BackgroundColor = string.IsNullOrEmpty(args.NewTextValue) ? Color.FromRgba("#AA4A44") : Color.FromRgba("#FFFFFF");
+            ((Editor)sender).BackgroundColor = string.IsNullOrEmpty(args.NewTextValue) ? Color.FromRgba("#AA4A44") : Color.FromRgba("#D3D3D3");
         }
     }
 }
