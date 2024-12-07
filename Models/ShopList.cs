@@ -14,5 +14,8 @@ namespace PustanRaduLab7.Models
         [MaxLength(250), Unique]
         public string Description { get; set; }
         public DateTime Date { get; set; }
+
+    
+        public int ShopID { get; set; }
     }
 }

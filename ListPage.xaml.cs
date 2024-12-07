@@ -29,25 +29,21 @@ public partial class ListPage : ContentPage
         });
     }
 
-    // Funcția pentru ștergerea unui produs selectat
+   
     async void OnDeleteItemButtonClicked(object sender, EventArgs e)
     {
-        // Obținem produsul selectat din listView
-        var selectedProduct = listView.SelectedItem as Product;
+            var selectedProduct = listView.SelectedItem as Product;
 
-        // Verificăm dacă un produs a fost selectat
-        if (selectedProduct != null)
+            if (selectedProduct != null)
         {
-            // Ștergem produsul din baza de date
-            await App.Database.DeleteProductAsync(selectedProduct);
+                    await App.Database.DeleteProductAsync(selectedProduct);
 
-            // Actualizăm lista de produse
-            var shopList = (ShopList)BindingContext;
+                  var shopList = (ShopList)BindingContext;
             listView.ItemsSource = await App.Database.GetListProductsAsync(shopList.ID);
         }
         else
         {
-            // Afișăm un mesaj de alertă dacă nu este niciun produs selectat
+        
             await DisplayAlert("No Selection", "Please select a product to delete.", "OK");
         }
     }
