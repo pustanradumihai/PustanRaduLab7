@@ -1,0 +1,40 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:local="clr-namespace:PustanRaduLab7"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PustanRaduLab7.ListPage"
+             Title="ListPage"
+             >
+             
+    <StackLayout Margin="20">
+        <Editor Placeholder="Enter the description of the shopping list"
+                 Text="{Binding Description}"
+                 HeightRequest="100" >
+            <Editor.Behaviors>
+                <local:ValidationBehaviour />
+            </Editor.Behaviors>
+        </Editor>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+        <ListView x:Name="listView"
+               Margin="20">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid>
+        <Button Text="Add/Choose Item to buy" MaximumWidthRequest="300" Clicked="OnChooseButtonClicked"/>
+        </Grid>
+
+    </StackLayout>
+</ContentPage>
